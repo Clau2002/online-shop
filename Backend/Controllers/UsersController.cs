@@ -1,5 +1,6 @@
 ﻿using Backend.Data;
 using Backend.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,7 @@ namespace Backend.Controllers
             this._context = context;
         }
 
+        //[Authorize(Roles="Admin")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()
         {
